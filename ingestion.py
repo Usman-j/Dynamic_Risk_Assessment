@@ -10,7 +10,7 @@ with open('config.json','r') as f:
     config = json.load(f) 
 
 input_folder_path = config['input_folder_path']
-output_folder_path = config['output_folder_path']
+dataset_csv_path = os.path.join(os.getcwd(),config['output_folder_path'])
 
 
 
@@ -20,7 +20,7 @@ def merge_multiple_dataframe():
     Checks for datasets, compiles them together, writes to an output file and saves record of ingested data.
     '''
     df_final = pd.DataFrame()
-    record_file = open('./'+output_folder_path+'/ingestedfiles.txt', 'w')
+    record_file = open(dataset_csv_path+'/ingestedfiles.txt', 'w')
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     record_file.write('Ingestion Datetime: '+ dt_string+ '\n')
@@ -33,7 +33,7 @@ def merge_multiple_dataframe():
             df_final = df_final.append(temp_df)
     record_file.close()
     df_final = df_final.drop_duplicates()
-    df_final.to_csv('./'+output_folder_path+'/finaldata.csv', index=False)
+    df_final.to_csv(dataset_csv_path+'/finaldata.csv', index=False)
 
 if __name__ == '__main__':
     merge_multiple_dataframe()

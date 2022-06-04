@@ -29,6 +29,9 @@ def score_model(model_name='trainedmodel.pkl',
         Name of test data file
     target_var: str
         Name of the target variable
+    Outputs:
+    f1score: float
+        f1score of the model on the input date
     '''
     
     score_file = open(model_path+'/latestscore.txt', 'w')
@@ -41,6 +44,7 @@ def score_model(model_name='trainedmodel.pkl',
     f1score = metrics.f1_score(predicted,y_test)
     score_file.write(str(f1score)+'\n')
     score_file.close()
+    return f1score
 
 if __name__ == '__main__':
     score_model()

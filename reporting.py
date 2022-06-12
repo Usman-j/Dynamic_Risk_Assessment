@@ -21,7 +21,7 @@ model_path = os.path.join(os.getcwd(),config['output_model_path'])
 feat_list = config['feat_list']
 
 ##############Function for reporting
-def score_model():
+def score_model_matrix():
     '''
     Calculates a confusion matrix using the test data and the deployed model and saves the figure.
     '''
@@ -37,4 +37,4 @@ def score_model():
     plt.close()
 
 if __name__ == '__main__':
-    score_model()
+    score_model_matrix()

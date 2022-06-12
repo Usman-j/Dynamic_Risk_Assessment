@@ -21,7 +21,7 @@ def store_model_into_pickle(model_name='trainedmodel.pkl',
                             score_file='latestscore.txt',
                             ingestion_record='ingestedfiles.txt'):
     '''
-    Copy the latest pickle file, the latestscore.txt value, and the ingestfiles.txt file into the deployment directory.
+    Copy the latest pickle file, the latestscore.txt value, and the ingestedfiles.txt file into the deployment directory.
     Inputs: 
     model_name: str
         Name of pickled model file

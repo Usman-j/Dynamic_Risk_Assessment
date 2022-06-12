@@ -16,8 +16,8 @@ model_path = os.path.join(os.getcwd(),config['output_model_path'])
 feat_list = config['feat_list']
 
 #################Function for model scoring
-def score_model(model_name='trainedmodel.pkl',
-                test_file='testdata.csv',
+def score_model(model_name=model_path+'/trainedmodel.pkl',
+                test_file=test_data_path+'/testdata.csv',
                 target_var='exited'):
     '''
     This function takes a trained model, loads test data, and calculates an F1 score for the model relative to the test data.
@@ -35,9 +35,9 @@ def score_model(model_name='trainedmodel.pkl',
     '''
     
     score_file = open(model_path+'/latestscore.txt', 'w')
-    with open(model_path+'/'+model_name, 'rb') as file:
+    with open(model_name, 'rb') as file:
         model = pickle.load(file)
-    df_test = pd.read_csv(test_data_path+'/'+test_file)
+    df_test = pd.read_csv(test_file)
     X_test = df_test.loc[:,feat_list].values.reshape(-1, len(feat_list))
     y_test = df_test[target_var].values.reshape(-1, 1).ravel()
     predicted = model.predict(X_test)

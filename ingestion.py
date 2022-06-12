@@ -25,7 +25,7 @@ def merge_multiple_dataframe():
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     record_file.write('Ingestion Datetime: '+ dt_string+ '\n')
     record_file.write('Data Folder: '+ input_folder_path+ '\n')
-    filenames = os.listdir(os.getcwd()+'/'+input_folder_path)
+    filenames = os.listdir(os.path.join(os.getcwd(),input_folder_path))
     for file in filenames:
         if file[-4:] == '.csv':
             record_file.write(file+'\n')

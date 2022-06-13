@@ -11,9 +11,10 @@ Project dependencies are available in the [requirements](requirements.txt) file.
 ```bash
 pip install -r requirements.txt
 ```
-<img src="fullprocess.jpg" width=550 height=300>
 
 ## Detailed Steps
+<img src="fullprocess.jpg" width=550 height=300>
+
 1. **Configuration:** A [configuration](config.json) file is used to set the paths of folders required for each step of the model development process.
 2. **Data Ingestion:** [Ingestion](ingestion.py) script checks for datasets, compiles them together, writes to a merged [output file](/ingesteddata/finaldata.csv) and saves [record](/ingesteddata/ingestedfiles.txt) of ingested data.  
 3. **Training:** [Training](training.py) script trains the model on the ingested data and saves the [pickled model](/practicemodels/trainedmodel.pkl).

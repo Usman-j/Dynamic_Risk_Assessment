@@ -8,7 +8,7 @@ Test Data Predictions:
 ]
 
 Test Data f1score: 
-0.3333333333333333
+0.5714285714285715
 Summary statistics of training data: 
 [
   5625.923076923077, 
@@ -25,8 +25,8 @@ Summary statistics of training data:
 Diagnsotics: 
 {
   "execution_times": [
-    0.008337999999639578, 
-    0.00459950000004028
+    0.009729400000651367, 
+    0.004252700000506593
   ], 
   "missing_data": [
     0.0, 
